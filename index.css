@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 375px;
+}
+
+h1, p{
+  margin: 0;
+  font-size: 13px;
+}
+
+header{
+  display: flex;
+  border-bottom: solid 1px lightgrey;
+  height: 57px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+}
+
+.logo-img{
+  width: 120px;
+  height: 46.02px;
+}
+
+.user-avatar{
+  border-radius: 50%;
+  padding: 7px;
+  width: 34px;
+  height: 34px;
+}
+
+.header-user{
+  display: flex;
+  align-items: center;
+}
+
+.post-img{
+  width: 375px;
+  height: 375px;
+}
+
+.btn {
+  width: 23.3px;
+  height: 23.3px;
+  padding: 7px;
+}
+
+.likes-comment{
+  border-bottom: 30px solid lightgrey;
+}
+
+.likes-comment h1{
+  margin: 0 0 10px 7px;
+}
+
+.likes-comment .commet */{
+  display: block;
+}
+
+.comment{
+  font-weight: 400;
+}
