@@ -34,9 +34,9 @@ const likesEl = document.getElementById("likes-el")
 
 
 function renderPost(){
+  let newPost = ''
   for (const i in posts){
-    let newPost = document.createElement("section")
-    newPost.innerHTML = `<div class="header-user">
+    newPost += `<div class="header-user">
         <img id="avatar-profile-el" class="user-avatar" src="${posts[i].avatar}">
 
         <div class="username-location">
@@ -49,17 +49,31 @@ function renderPost(){
       <img id="post-img-el" class="post-img" src="${posts[i].post}">
 
       <div class="interaction-btn">
-        <img id="like-btn${i}" class="btn likebtn" src="images/icon-heart.png">
+        <img class="btn likebtn" data-like="${posts[i].name}" src="images/icon-heart.png">
         <img class="btn" src="images/icon-comment.png">
         <img class="btn" src="images/icon-dm.png">
       </div>
 
       <div class="likes-comment">
-        <h1><span id="likes-el" class="like-count${i}">${posts[i].likes}</span> Likes</h1>
+        <h1><span>${posts[i].likes}</span> Likes</h1>
         <h1 id="username-el">${posts[i].username}: <span id="comment-el" class="comment">${posts[i].comment}</span></h1>
       </div>`
-    body.appendChild(newPost)
   }
+  return newPost
 }
 
-renderPost()
+function render(){
+  document.getElementById('post-sketch').innerHTML = renderPost()
+}
+
+body.addEventListener('click', function(e){
+  posts.forEach(function(post){
+    if (post.name === e.target.dataset.like){
+      post.likes++
+      console.log(post.likes)
+    }
+  })
+  render()
+})
+
+render()

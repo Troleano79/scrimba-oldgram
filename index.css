@@ -62,3 +62,7 @@ header{
 .comment{
   font-weight: 400;
 }
+
+.liked {
+  background-color: red;
+}
